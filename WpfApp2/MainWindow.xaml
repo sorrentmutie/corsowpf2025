@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Label x:Name="myLabel"></Label>
-    </Grid>
+    <StackPanel>
+        <TextBlock Text="{Binding Id}" FontSize="24" Margin="10" />
+        <TextBlock Text="{Binding Età}" FontSize="24" Margin="10" />
+        <TextBlock Text="{Binding Nome}" FontSize="24" Margin="10" />
+        <Button Content="Invecchia" Click="Button_Click"></Button>
+    </StackPanel>
 </Window>

@@ -22,18 +22,22 @@ namespace WpfApp2
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly A a;
-
-        public MainWindow(A a)
+        public Persona ViewModel { get; set; } 
+        public MainWindow()
         {
             InitializeComponent();
-            //IClock myClock = new SystemClock();
-            //var c = new C(myClock);
-            //var b = new B(c);
-            //var a = new A(b);
-            a.DoSomething();
-            this.a = a;
-            myLabel.Content = a.DoSomething();
+            ViewModel = new Persona
+            {
+                Id = 1,
+                Nome = "Mario",
+                Età = 30
+            };
+            DataContext = ViewModel;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.Età++;
         }
     }
 }
