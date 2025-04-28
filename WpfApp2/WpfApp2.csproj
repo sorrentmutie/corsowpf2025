@@ -172,6 +172,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ChildWindow.xaml.cs">
+      <DependentUpon>ChildWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\AddressToStringConverter.cs" />
+    <Compile Include="Converters\NegateBooleanConverter.cs" />
+    <Compile Include="Models\Indirizzo.cs" />
+    <Compile Include="Services\ChildWindowService.cs" />
+    <Compile Include="Services\GlobalService.cs" />
+    <Compile Include="Services\PersonaService.cs" />
+    <Compile Include="ViewModels\ChildWindowViewModel.cs" />
+    <Compile Include="ViewModels\PersonaViewModel.cs" />
+    <Page Include="ChildWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PersonDataControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -180,6 +199,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controls\PersonDataControl.xaml.cs">
+      <DependentUpon>PersonDataControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\TemperatureToColorConverter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -217,5 +240,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

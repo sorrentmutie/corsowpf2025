@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using WpfApp2.Models;
+using WpfApp2.Services;
 
 namespace WpfApp2
 {
@@ -24,10 +25,14 @@ namespace WpfApp2
                 .ConfigureServices((context, services) =>
                 {
                     services.AddSingleton<MainWindow>();
+                    services.AddSingleton<ChildWindow>();
                     services.AddSingleton<IClock, SystemClock>();
                     services.AddSingleton<C>();
                     services.AddSingleton<B>();
                     services.AddSingleton<A>();
+                    services.AddSingleton<PersonaService>();
+                    services.AddSingleton<ChildWindowService>();
+                    services.AddSingleton<GlobalService>();
                 })
                 .Build();
         }
