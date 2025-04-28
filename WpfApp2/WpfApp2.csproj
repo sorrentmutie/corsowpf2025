@@ -177,6 +177,7 @@
     </Compile>
     <Compile Include="Converters\AddressToStringConverter.cs" />
     <Compile Include="Converters\NegateBooleanConverter.cs" />
+    <Compile Include="Helpers\RelayCommand.cs" />
     <Compile Include="Models\Indirizzo.cs" />
     <Compile Include="Services\ChildWindowService.cs" />
     <Compile Include="Services\GlobalService.cs" />
