@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using WpfApp2.Customers;
 using WpfApp2.Models;
 using WpfApp2.Services;
 
@@ -33,6 +34,7 @@ namespace WpfApp2
                     services.AddSingleton<PersonaService>();
                     services.AddSingleton<ChildWindowService>();
                     services.AddSingleton<GlobalService>();
+                    services.AddSingleton<ICustomersRepository, CustomersService>();
                 })
                 .Build();
         }
