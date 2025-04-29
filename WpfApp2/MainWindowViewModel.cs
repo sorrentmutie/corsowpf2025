@@ -7,28 +7,22 @@ using WpfApp2.Models;
 
 namespace WpfApp2
 {
-    public class MainWindowViewModel : INotifyPropertyChanged
+    public class MainWindowViewModel : BaseViewModel
     {
 
         public ObservableCollection<Persona> Persone { get; set; }
             = new ObservableCollection<Persona>();
 
-        public ICommand AggiungiPersonaCommand { get; }
-
-
         public ObservableCollection<Customer> Customers { get; set; }
             = new ObservableCollection<Customer>();
 
+        public ICommand AggiungiPersonaCommand { get; }
 
         private string _title = "Main Title";
         public string Title
         {
             get { return _title; }
-            set
-            {
-                _title = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Title)));
-            }
+            set => SetProperty(ref _title, value);
         }
 
         public MainWindowViewModel()
@@ -48,7 +42,5 @@ namespace WpfApp2
         {
             Persone.Add(new Persona { Id = 1, Nome = "Nuova Persona" });
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

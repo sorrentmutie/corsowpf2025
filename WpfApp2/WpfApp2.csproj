@@ -184,6 +184,7 @@
     <Compile Include="Customers\CustomersListViewModel.cs" />
     <Compile Include="Customers\CustomersService.cs" />
     <Compile Include="Customers\ICustomersRepository.cs" />
+    <Compile Include="Helpers\BaseViewModel.cs" />
     <Compile Include="Helpers\RelayCommand.cs" />
     <Compile Include="Helpers\RuoloTemplateSelector.cs" />
     <Compile Include="MainWindowViewModel.cs" />
