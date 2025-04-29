@@ -9,7 +9,31 @@
     <!--<UserControl.DataContext>
         <cust:CustomersListViewModel/>
     </UserControl.DataContext>-->
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type cust:Customer}">
+            <Border BorderBrush="Black" BorderThickness="4" Padding="6" Margin="3">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding FullName}" Foreground="DarkGreen" FontSize="15" FontWeight="Bold"></TextBlock>
+                    <TextBlock Text="{Binding Email}" Foreground="DarkCyan" FontSize="11" FontWeight="Bold"></TextBlock>
+                    <TextBlock Text="{Binding PhoneNumber}" Foreground="DarkKhaki" FontSize="11" FontWeight="Bold"></TextBlock>
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+    </UserControl.Resources>
     <Grid>
-        <DataGrid ItemsSource="{Binding Customers}"></DataGrid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Content="New Customer" Command="{Binding AddCustomerCommand}"></Button>
+            <Button Content="Remove Customer" Command="{Binding RemoveCustomerCommand}"></Button>
+        </StackPanel>
+        <DataGrid SelectedItem="{Binding SelectedCustomer}" CanUserAddRows="False" Grid.Row="1" ItemsSource="{Binding Customers}"></DataGrid>
+        <ListBox Grid.Row="2" ItemsSource="{Binding Customers}"></ListBox>
     </Grid>
 </UserControl>

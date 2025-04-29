@@ -47,10 +47,9 @@
                 </StackPanel>
             </Border>
         </DataTemplate>
-        
-        
+
     </Window.Resources>
-    
+
 
 
     <!--<Window.Resources>
@@ -62,20 +61,19 @@
         <local:ViewModelLocator/>
     </Window.DataContext>-->
 
-    <!--<Grid>
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        --><!--<order:OrdersListView Grid.Row="0" />
-        <cust:CustomersListView Grid.Row="1" />--><!--
-       
-    </Grid>-->
+        
+        <cust:CustomersListView Grid.Row="0" />
 
-    <Grid>
+    </Grid>
+
+    <!--<Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
@@ -83,16 +81,16 @@
         </Grid.RowDefinitions>
 
 
-        <!--<ListBox ItemsSource="{Binding Persone}"
+        --><!--<ListBox ItemsSource="{Binding Persone}"
                  FontSize="32"
-                 ItemTemplateSelector="{StaticResource RuoloTemplateSelector}"></ListBox>-->
+                 ItemTemplateSelector="{StaticResource RuoloTemplateSelector}"></ListBox>--><!--
 
         <Button Content="Aggiungi Persona" Command="{Binding AggiungiPersonaCommand}" >
             
         </Button>
         
         <ListBox Grid.Row="1" ItemsSource="{Binding Persone}"></ListBox>
-        
+
         <DataGrid Grid.Row="2" AutoGenerateColumns="False" ItemsSource="{Binding Persone}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"></DataGridTextColumn>
@@ -101,7 +99,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        </Grid>
+    </Grid>-->
 
         <!--<Label Content="{Binding Title}" Background="Black" Foreground="White">
     </Label>-->
