@@ -1,14 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 using WpfApp2.Customers;
 using WpfApp2.Models;
+using WpfApp2.Orders;
 using WpfApp2.Services;
 
 namespace WpfApp2
@@ -17,7 +12,7 @@ namespace WpfApp2
     /// Logica di interazione per App.xaml
     /// </summary>
     public partial class App : Application
-    {            
+    {
         public static IHost AppHost { get; private set; }
 
         public App()
@@ -35,6 +30,7 @@ namespace WpfApp2
                     services.AddSingleton<ChildWindowService>();
                     services.AddSingleton<GlobalService>();
                     services.AddSingleton<ICustomersRepository, CustomersService>();
+                    services.AddSingleton<IOrdersRepository, OrdersService>();
                 })
                 .Build();
         }

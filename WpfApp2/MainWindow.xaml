@@ -6,16 +6,18 @@
         xmlns:local="clr-namespace:WpfApp2"
         xmlns:controls="clr-namespace:WpfApp2.Controls"
         xmlns:cust="clr-namespace:WpfApp2.Customers"
+        xmlns:order="clr-namespace:WpfApp2.Orders"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <order:OrdersListView Grid.Row="0" />
         <cust:CustomersListView Grid.Row="1" />
     </Grid>
 </Window>

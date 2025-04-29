@@ -7,6 +7,7 @@ namespace WpfApp2.Customers
     {
         Task<List<Customer>> GetAllCustomersAsync();
         Task<Customer> GetCustomerByIdAsync(string id);
+        Task<Customer> GetCustomerByNameAsync(string name);
         Task AddCustomerAsync(Customer customer);
     }
 }
