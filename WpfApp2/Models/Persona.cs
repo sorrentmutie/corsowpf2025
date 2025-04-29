@@ -11,6 +11,8 @@ namespace WpfApp2.Models
         private double temperatura;
         private Indirizzo indirizzoSelezionato;
 
+        public string Ruolo { get; set; } = "Studente";
+
         public int Id { get; set; }
         //public string Nome { get; set; }
         //public int Età { get; set; }

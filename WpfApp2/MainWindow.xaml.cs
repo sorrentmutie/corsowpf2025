@@ -33,13 +33,15 @@ namespace WpfApp2
         {
             InitializeComponent();
 
+            var x = Application.Current.Resources["Locator"] as ViewModelLocator;
+
             _personaService = personaService;
             _childWindowService = childWindowService;
             _globalService = globalService;
 
             _globalService.IncreaseCounter();
 
-            DataContext = _personaService.GetPeople();
+            //DataContext = _personaService.GetPeople();
         }
 
         private void AddPerson_Click(object sender, RoutedEventArgs e)

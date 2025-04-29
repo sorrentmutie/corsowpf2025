@@ -31,13 +31,18 @@ namespace WpfApp2
                     services.AddSingleton<GlobalService>();
                     services.AddSingleton<ICustomersRepository, CustomersService>();
                     services.AddSingleton<IOrdersRepository, OrdersService>();
+                    services.AddSingleton<CustomersListViewModel>();
                 })
                 .Build();
         }
 
         protected override async void OnStartup(StartupEventArgs e)
         {
+            Application.Current.Resources.Add("Locator", new ViewModelLocator());
+            //Application.Current.Resources["Locator"] = AppHost.Services.GetRequiredService<ViewModelLocator>();
+
             await AppHost.StartAsync();
+            
             var mainForm = AppHost.Services.GetRequiredService<MainWindow>();
 
             mainForm.Show();

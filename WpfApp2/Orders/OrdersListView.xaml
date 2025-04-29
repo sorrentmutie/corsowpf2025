@@ -6,9 +6,9 @@
              xmlns:orders="clr-namespace:WpfApp2.Orders"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.DataContext>
+    <!--<UserControl.DataContext>
         <orders:OrdersListViewModel/>
-    </UserControl.DataContext>
+    </UserControl.DataContext>-->
     <Grid>
         <DataGrid ItemsSource="{Binding Orders}"></DataGrid>
     </Grid>

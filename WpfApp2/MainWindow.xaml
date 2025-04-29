@@ -4,12 +4,65 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
+        xmlns:models="clr-namespace:WpfApp2.Models"
         xmlns:controls="clr-namespace:WpfApp2.Controls"
         xmlns:cust="clr-namespace:WpfApp2.Customers"
         xmlns:order="clr-namespace:WpfApp2.Orders"
+        xmlns:helpers="clr-namespace:WpfApp2.Helpers"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="800">
-    <Grid>
+        DataContext="{Binding Vm, Source={StaticResource Locator}}"
+        Title="MainWindow" Height="800" Width="800"
+       >
+
+    <Window.Resources>
+        <!--<DataTemplate DataType="{x:Type models:Persona }">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Nome}" Foreground="Red" Margin="5"></TextBlock>
+                <TextBlock Text="{Binding Età}" Margin="5"></TextBlock>
+            </StackPanel>
+        </DataTemplate>-->
+
+        <DataTemplate x:Key="StudenteTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Nome}" Foreground="Red" Margin="5"></TextBlock>
+                <TextBlock Text="{Binding Età}" Margin="5"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="InsegnanteTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Nome}" Foreground="Blue" Margin="5"></TextBlock>
+                <TextBlock Text="{Binding Età}" Margin="5"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
+
+        <!--<helpers:RuoloTemplateSelector x:Key="RuoloTemplateSelector"
+            StudenteTemplate="{StaticResource StudenteTemplate}"
+            InsegnanteTemplate="{StaticResource InsegnanteTemplate}"/>-->
+
+        <DataTemplate DataType="{x:Type models:Persona}">
+            <Border BorderBrush="Black" BorderThickness="2" Padding="8" Margin="4">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="{Binding Nome}" FontSize="20" FontWeight="Bold"></TextBlock>
+                    <TextBlock Text="{Binding Ruolo}" FontSize="16" FontWeight="Bold"></TextBlock>
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+        
+        
+    </Window.Resources>
+    
+
+
+    <!--<Window.Resources>
+           
+        <local:ViewModelLocator x:Key="Locator"/>
+    </Window.Resources>-->
+
+    <!--<Window.DataContext>
+        <local:ViewModelLocator/>
+    </Window.DataContext>-->
+
+    <!--<Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
@@ -17,7 +70,34 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <order:OrdersListView Grid.Row="0" />
-        <cust:CustomersListView Grid.Row="1" />
-    </Grid>
+        --><!--<order:OrdersListView Grid.Row="0" />
+        <cust:CustomersListView Grid.Row="1" />--><!--
+       
+    </Grid>-->
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <!--<ListBox ItemsSource="{Binding Persone}"
+                 FontSize="32"
+                 ItemTemplateSelector="{StaticResource RuoloTemplateSelector}"></ListBox>-->
+
+        <ListBox ItemsSource="{Binding Persone}"></ListBox>
+        
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" ItemsSource="{Binding Persone}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ruolo" Binding="{Binding Ruolo}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Età" Binding="{Binding Età}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        </Grid>
+
+        <!--<Label Content="{Binding Title}" Background="Black" Foreground="White">
+    </Label>-->
 </Window>

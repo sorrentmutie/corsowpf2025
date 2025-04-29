@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,10 @@ namespace WpfApp2.Customers
     {
         public CustomersListView()
         {
+            //var repository = new CustomersService();
+            var repository = App.AppHost.Services.GetService<ICustomersRepository>();
+
+            DataContext = new CustomersListViewModel(repository);
             InitializeComponent();
         }
     }

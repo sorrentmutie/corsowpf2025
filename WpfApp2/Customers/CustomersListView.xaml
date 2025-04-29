@@ -6,9 +6,9 @@
              xmlns:cust="clr-namespace:WpfApp2.Customers"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.DataContext>
+    <!--<UserControl.DataContext>
         <cust:CustomersListViewModel/>
-    </UserControl.DataContext>
+    </UserControl.DataContext>-->
     <Grid>
         <DataGrid ItemsSource="{Binding Customers}"></DataGrid>
     </Grid>
