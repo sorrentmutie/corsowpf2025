@@ -46,6 +46,12 @@ namespace WpfApp2.Customers
             return customers.FirstOrDefault(c => c.FullName == name);
         }
 
+        public async Task RemoveCustomerAsync(Customer selectedCustomer)
+        {
+            await DoSomethingAsync();
+            customers.Remove(selectedCustomer);
+        }
+
         private Task DoSomethingAsync()
         {
             return Task.CompletedTask;

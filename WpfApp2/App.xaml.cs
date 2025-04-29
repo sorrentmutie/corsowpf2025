@@ -42,7 +42,7 @@ namespace WpfApp2
             //Application.Current.Resources["Locator"] = AppHost.Services.GetRequiredService<ViewModelLocator>();
 
             await AppHost.StartAsync();
-            
+
             var mainForm = AppHost.Services.GetRequiredService<MainWindow>();
 
             mainForm.Show();

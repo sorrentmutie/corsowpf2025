@@ -50,12 +50,25 @@ namespace WpfApp2.Customers
 
         private void AddCustomer()
         {
-            Customers.Add(new Customer { Id = Guid.NewGuid().ToString(), FullName = "New Customer" });
+            var customer = new Customer { Id = Guid.NewGuid().ToString(), FullName = "New Customer" };
+            _customersRepository.AddCustomerAsync(customer);
+            var customers = _customersRepository.GetAllCustomersAsync().Result;
+            Customers.Clear();
+            foreach (var cust in customers)
+            {
+                Customers.Add(cust);
+            }
         }
 
         private void RemoveCustomer()
         {
-            Customers.Remove(SelectedCustomer);
+            _customersRepository.RemoveCustomerAsync(SelectedCustomer);
+            var customers = _customersRepository.GetAllCustomersAsync().Result;
+            Customers.Clear();
+            foreach (var cust in customers)
+            {
+                Customers.Add(cust);
+            }
         }
 
         private bool IsCustomerSelected()

@@ -8,7 +8,7 @@ namespace WpfApp2.Orders
         private readonly IOrdersRepository _ordersRepository;
         //= new OrdersService();
         private readonly ICustomersRepository _customersRepository;
-           // = new CustomersService();
+        // = new CustomersService();
 
         public ObservableCollection<OrderDTO> Orders { get; set; } = new ObservableCollection<OrderDTO>();
 
@@ -21,13 +21,16 @@ namespace WpfApp2.Orders
             foreach (var order in orders)
             {
                 var customer = _customersRepository.GetCustomerByIdAsync(order.CustomerId).Result;
-                Orders.Add(new OrderDTO()
+                if (customer != null)
                 {
-                    Id = order.Id,
-                    Date = order.Date,
-                    Total = order.Total,
-                    CustomerName = customer.FullName
-                });
+                    Orders.Add(new OrderDTO()
+                    {
+                        Id = order.Id,
+                        Date = order.Date,
+                        Total = order.Total,
+                        CustomerName = customer.FullName
+                    });
+                }
             }
         }
     }

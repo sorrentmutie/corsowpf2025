@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WpfApp2
+﻿namespace WpfApp2
 {
     public class ViewModelLocator
     {
@@ -12,7 +6,7 @@ namespace WpfApp2
 
         public ViewModelLocator()
         {
-            Vm = new MainWindowViewModel();
+            //Vm = new MainWindowViewModel();
         }
     }
 }

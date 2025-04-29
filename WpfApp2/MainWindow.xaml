@@ -10,7 +10,6 @@
         xmlns:order="clr-namespace:WpfApp2.Orders"
         xmlns:helpers="clr-namespace:WpfApp2.Helpers"
         mc:Ignorable="d"
-        DataContext="{Binding Vm, Source={StaticResource Locator}}"
         Title="MainWindow" Height="800" Width="800"
        >
 
@@ -48,10 +47,34 @@
             </Border>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type cust:CustomersListViewModel}">
+            <StackPanel>
+                <Label Content="Customers"></Label>
+                <cust:CustomersListView></cust:CustomersListView>
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type order:OrdersListViewModel}">
+            <StackPanel>
+                <Label Content="Orders"></Label>
+                <order:OrdersListView></order:OrdersListView>
+            </StackPanel>
+        </DataTemplate>
+
     </Window.Resources>
+    
+    <!--<Window.DataContext>
+        <local:MainWindowViewModel></local:MainWindowViewModel>
+    </Window.DataContext>-->
 
-
-
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="Orders" Command="{Binding GoToOrdersCommand}"></Button>
+            <Button Content="Customers" Command="{Binding GoToCustomersCommand}"></Button>
+        </StackPanel>
+        <Label Content="Ciao 2"></Label>
+        <ContentControl Content="{Binding CurrentViewModel}"></ContentControl>
+    </StackPanel>
     <!--<Window.Resources>
            
         <local:ViewModelLocator x:Key="Locator"/>
@@ -61,7 +84,7 @@
         <local:ViewModelLocator/>
     </Window.DataContext>-->
 
-    <Grid>
+    <!--<Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
@@ -71,7 +94,7 @@
         
         <cust:CustomersListView Grid.Row="0" />
 
-    </Grid>
+    </Grid>-->
 
     <!--<Grid>
         <Grid.RowDefinitions>
