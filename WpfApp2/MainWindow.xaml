@@ -5,21 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         xmlns:controls="clr-namespace:WpfApp2.Controls"
+        xmlns:cust="clr-namespace:WpfApp2.Customers"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Button Grid.Row="0" Grid.Column="0" Content="Mostra seconda finestra" x:Name="ShowChildWindow" Click="ShowChildWindow_Click"></Button>
-        <DataGrid Grid.RowSpan="2" Grid.Column="1" ItemsSource="{Binding Persone}"></DataGrid>
-        <Button Grid.Row="1" Grid.Column="0" Content="Aggiungi persona" x:Name="AddPerson" Click="AddPerson_Click"></Button>
-        <controls:PersonDataControl Grid.Row="2" Grid.ColumnSpan="2" DataContext="{Binding Persona}"></controls:PersonDataControl>
+        <cust:CustomersListView Grid.Row="1" />
     </Grid>
 </Window>
