@@ -5,6 +5,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using WpfApp2.Helpers;
 using WpfApp2.Models;
 
 namespace WpfApp2
@@ -14,6 +16,9 @@ namespace WpfApp2
 
         public ObservableCollection<Persona> Persone { get; set; } 
             = new ObservableCollection<Persona>();
+
+        public ICommand AggiungiPersonaCommand { get; }
+
 
 
         private string _title = "Main Title";
@@ -34,6 +39,13 @@ namespace WpfApp2
             Persone.Add(new Persona { Nome = "Peach", Età = 28, Temperatura = 36.8, Ruolo = "Insegnante" });
             Persone.Add(new Persona { Nome = "Toad", Età = 25, Temperatura = 37.2 });
 
+            AggiungiPersonaCommand = new RelayCommand(AggiungiPersona);
+
+        }
+
+        private void AggiungiPersona()
+        {
+            Persone.Add(new Persona { Id = 1, Nome = "Nuova Persona" });
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

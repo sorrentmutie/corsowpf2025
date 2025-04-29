@@ -77,6 +77,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
@@ -86,9 +87,13 @@
                  FontSize="32"
                  ItemTemplateSelector="{StaticResource RuoloTemplateSelector}"></ListBox>-->
 
-        <ListBox ItemsSource="{Binding Persone}"></ListBox>
+        <Button Content="Aggiungi Persona" Command="{Binding AggiungiPersonaCommand}" >
+            
+        </Button>
         
-        <DataGrid Grid.Row="1" AutoGenerateColumns="False" ItemsSource="{Binding Persone}">
+        <ListBox Grid.Row="1" ItemsSource="{Binding Persone}"></ListBox>
+        
+        <DataGrid Grid.Row="2" AutoGenerateColumns="False" ItemsSource="{Binding Persone}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Ruolo" Binding="{Binding Ruolo}"></DataGridTextColumn>
