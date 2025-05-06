@@ -4,17 +4,35 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DemoGiorno4"
+        xmlns:converters="clr-namespace:DemoGiorno4.Converters"
         xmlns:vm="clr-namespace:DemoGiorno4.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
+    <Window.Resources>
+        <converters:AllFieldsValidConverter x:Key="AllFieldsValidConverter"/>
+    </Window.Resources>
+    
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
-
-
-    <Grid>
-        <StackPanel Orientation="Vertical">
+    <StackPanel Orientation="Vertical">
+        <StackPanel>
+            <TextBox Width="200" x:Name="InputBox"/>
+            <CheckBox Content="Conferma" x:Name="CheckBox"></CheckBox>
+            <Button Content="Continua" Width="100">
+                <Button.IsEnabled>
+                    <MultiBinding Converter="{StaticResource AllFieldsValidConverter}">
+                        <Binding ElementName="InputBox" Path="Text"></Binding>
+                        <Binding ElementName="CheckBox" Path="IsChecked"></Binding>
+                    </MultiBinding>
+                </Button.IsEnabled>
+            </Button>
+            
+        </StackPanel>
+        
+        
+        
             <StackPanel Orientation="Horizontal">
                 <Label Content="Nome"></Label>
                 <TextBox Width="50" Text="{Binding NuovaPersona.Nome}"></TextBox>
@@ -57,5 +75,4 @@
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
-    </Grid>
 </Window>
