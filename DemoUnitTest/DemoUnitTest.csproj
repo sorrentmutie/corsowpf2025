@@ -55,7 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Cart.cs" />
+    <Compile Include="CartViewModel.cs" />
+    <Compile Include="ICurrentTime.cs" />
+    <Compile Include="IDiscountService.cs" />
     <Compile Include="PersonaViewModel.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="RelayCommand.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
