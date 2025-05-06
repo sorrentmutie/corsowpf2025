@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace DemoEditableObject
 {
     public class Persona : INotifyPropertyChanged, IEditableObject
     {
         private string _nome;
-        private string _backupNome;
+        private string _cognome;
 
+        private Persona _backupPersona;
         public string Nome
         {
             get { return _nome; }
@@ -24,23 +20,35 @@ namespace DemoEditableObject
                 }
             }
         }
-
+        public string Cognome
+        {
+            get { return _cognome; }
+            set
+            {
+                if (_cognome != value)
+                {
+                    _cognome = value;
+                    OnPropertyChanged(nameof(Cognome));
+                }
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void BeginEdit()
         {
-            _backupNome = Nome;
+            _backupPersona = new Persona() { Nome = Nome, Cognome = Cognome };
         }
 
         public void CancelEdit()
         {
-            Nome = _backupNome;
+            Nome = _backupPersona.Nome;
+            Cognome = _backupPersona.Cognome;
         }
 
         public void EndEdit()
         {
-            _backupNome = "";
+            _backupPersona = new Persona();
         }
 
         protected void OnPropertyChanged(string propertyName)

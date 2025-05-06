@@ -14,6 +14,8 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nome" Binding="{Binding Nome, 
                     UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Cognome" Binding="{Binding Cognome, 
+                    UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

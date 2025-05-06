@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 
 namespace DemoEditableObject
 {
@@ -15,9 +10,9 @@ namespace DemoEditableObject
         {
             Persone = new ObservableCollection<Persona>
             {
-                new Persona { Nome = "Mario" },
-                new Persona { Nome = "Luigi" },
-                new Persona { Nome = "Peach" }
+                new Persona { Nome = "Mario", Cognome = "M" },
+                new Persona { Nome = "Luigi", Cognome = "L" },
+                new Persona { Nome = "Peach", Cognome = "P" }
             };
         }
     }
