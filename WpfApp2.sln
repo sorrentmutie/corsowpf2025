@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp2", "WpfApp2\WpfApp2.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoGiorno4", "DemoGiorno4\DemoGiorno4.csproj", "{69205B7D-425D-424E-9719-572BA8B09F9B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoDataErrorInfo", "DemoDataErrorInfo\DemoDataErrorInfo.csproj", "{006A220B-EBA7-403E-A4E4-B29084213387}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{69205B7D-425D-424E-9719-572BA8B09F9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69205B7D-425D-424E-9719-572BA8B09F9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69205B7D-425D-424E-9719-572BA8B09F9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{006A220B-EBA7-403E-A4E4-B29084213387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{006A220B-EBA7-403E-A4E4-B29084213387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{006A220B-EBA7-403E-A4E4-B29084213387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{006A220B-EBA7-403E-A4E4-B29084213387}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
