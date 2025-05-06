@@ -10,6 +10,12 @@
                 <Trigger Property="IsHighlighted" Value="True">
                     <Setter Property="Background" Value="LightBlue"></Setter>
                 </Trigger>
+                <Trigger Property="IsHighlighted" Value="False">
+                    <Setter Property="Height" Value="200"></Setter>
+                </Trigger>
+                <Trigger Property="CustomHeight" Value="250">
+                    <Setter Property="Background" Value="DarkRed"></Setter>
+                </Trigger>
             </Style.Triggers>
         </Style>
     </Application.Resources>

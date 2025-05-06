@@ -10,8 +10,9 @@
         <!--<local:MyControl x:Name="myControl" Titolo="MioTitolo"></local:MyControl>
         <Button Content="Cambia Titolo" Click="Button_Click"></Button>-->
 
-        <local:HighlightButton Content="Grigio" IsHighlighted="False"></local:HighlightButton>
-        <local:HighlightButton Content="Blue" IsHighlighted="True"></local:HighlightButton>
+        <local:HighlightButton x:Name="Button1" Content="Grigio" IsHighlighted="False"></local:HighlightButton>
+        <local:HighlightButton x:Name="Button2" Content="Blue" IsHighlighted="True"></local:HighlightButton>
+        <Button Content="Cambia Highligth" Click="ChangeHighlight"></Button>
 
     </StackPanel>
 </Window>
